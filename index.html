@@ -4,63 +4,204 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Alfa AI Studio | פרסומות וידאו לעסקים</title>
-<meta name="description" content="סרטוני פרסומת קצרים לעסקים, בעברית טבעית. בלי צילום ובלי שחקנים. רואים לפני שמשלמים.">
+<meta name="description" content="סרטוני פרסומת קצרים לעסקים, עם קריינות בעברית וכתוביות. בלי צלם ובלי שחקנים. רואים טיוטה לפני שמשלמים.">
 <meta property="og:title" content="Alfa AI Studio | פרסומות וידאו לעסקים">
-<meta property="og:description" content="סרטוני פרסומת קצרים לעסקים, בעברית טבעית. רואים לפני שמשלמים.">
+<meta property="og:description" content="סרטוני פרסומת קצרים לעסקים, בעברית טבעית. רואים טיוטה לפני שמשלמים.">
 <meta property="og:image" content="https://alfandari123.github.io/alfa/og.jpg">
+<meta property="og:url" content="https://alfandari123.github.io/alfa/">
 <meta name="theme-color" content="#0E0E12">
 <link rel="icon" href="logo.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Alfa AI Studio",
+ "description":"סרטוני פרסומת קצרים לעסקים, עם קריינות בעברית וכתוביות",
+ "url":"https://alfandari123.github.io/alfa/","telephone":"+972587618561","areaServed":"IL",
+ "sameAs":["https://www.instagram.com/alfa.ai.studio/"]}
+</script>
 <style>
-  :root { --bg: #0E0E12; --card: #18181F; --ink: #F3F3EF; --muted: #A6A7AF; --yellow: #FFD400; --wa: #25D366; --wa-ink: #06260F; }
+  /* One-page studio site: hero, two sample videos, how it works, packages (no prices), FAQ, contact.
+     Mobile first; a sticky WhatsApp bar stays on screen on phones. */
+  :root { --bg: #0E0E12; --card: #17171E; --line: #2A2B33; --ink: #F3F3EF; --muted: #A6A7AF;
+    --yellow: #FFD400; --on-yellow: #131316; --wa: #25D366; --wa-ink: #06260F; }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   html, body { margin: 0; background: var(--bg); color: var(--ink); }
-  body { font-family: "Assistant", Arial, sans-serif; font-size: 17px; line-height: 1.55;
-    padding: max(28px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left)); }
-  main { max-width: 440px; margin: 0 auto; display: grid; gap: 22px; text-align: center; }
-  .logo { width: 108px; height: 108px; border-radius: 50%; margin: 0 auto; border: 3px solid var(--yellow); display: block; }
-  h1 { font-family: "Secular One", "Assistant", Arial, sans-serif; font-weight: 400; font-size: 30px; margin: 0; line-height: 1.2; }
-  .tag { color: var(--muted); margin: 6px 0 0; }
-  .btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 17px 18px; border-radius: 16px;
-    font-weight: 700; font-size: 19px; text-decoration: none; transition: transform .12s ease; }
+  body { font-family: "Assistant", Arial, sans-serif; font-size: 17px; line-height: 1.6; padding-bottom: 84px; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin: 0 auto; padding-left: max(18px, env(safe-area-inset-left)); padding-right: max(18px, env(safe-area-inset-right)); }
+  h1, h2 { font-family: "Secular One", "Assistant", Arial, sans-serif; font-weight: 400; line-height: 1.2; margin: 0; }
+  h2 { font-size: clamp(26px, 5vw, 34px); margin-bottom: 18px; }
+  section { padding: 44px 0; }
+  .muted { color: var(--muted); }
+
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: max(16px, env(safe-area-inset-top)); padding-bottom: 8px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; }
+  .brand img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--yellow); }
+  .top a.small { font-weight: 700; font-size: 15px; text-decoration: none; padding: 8px 14px; border-radius: 999px; background: var(--wa); color: var(--wa-ink); }
+
+  .hero { padding: 36px 0 28px; display: grid; gap: 18px; }
+  .hero h1 { font-size: clamp(34px, 8vw, 54px); }
+  .hero h1 span { color: var(--yellow); }
+  .hero p { font-size: 19px; margin: 0; max-width: 560px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 22px; border-radius: 14px;
+    font-weight: 700; font-size: 18px; text-decoration: none; transition: transform .12s ease; }
   .btn:active { transform: scale(.98); }
-  .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+  .btn:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
   .wa { background: var(--wa); color: var(--wa-ink); }
-  .ghost { background: var(--card); color: var(--ink); border: 1.5px solid #2C2D35; font-size: 17px; }
-  .wa svg { width: 26px; height: 26px; flex: none; }
-  ul { list-style: none; margin: 0; padding: 18px; background: var(--card); border-radius: 16px; display: grid; gap: 10px; text-align: right; }
-  li { display: grid; grid-template-columns: 14px 1fr; gap: 10px; align-items: start; }
-  li::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--yellow); margin-top: 8px; }
-  .links { display: grid; gap: 12px; }
-  footer { color: var(--muted); font-size: 14px; }
-  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  .ghost { border: 1.5px solid var(--line); background: var(--card); }
+  .wa svg { width: 24px; height: 24px; flex: none; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .badges li { font-size: 15px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+
+  .works { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .work { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 12px; display: grid; gap: 10px; }
+  .work video { width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; background: #000; display: block; object-fit: cover; }
+  .work h3 { margin: 4px 4px 0; font-size: 19px; }
+  .work p { margin: 0 4px 6px; color: var(--muted); font-size: 15.5px; }
+  .tag { display: inline-block; font-size: 13px; font-weight: 700; color: var(--on-yellow); background: var(--yellow); border-radius: 6px; padding: 1px 8px; margin-inline-start: 6px; vertical-align: middle; }
+  .more { margin-top: 16px; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; counter-reset: s; padding: 0; margin: 0; list-style: none; }
+  .steps li { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  .steps li::before { counter-increment: s; content: counter(s); display: inline-grid; place-items: center; width: 34px; height: 34px;
+    border-radius: 50%; background: var(--yellow); color: var(--on-yellow); font-family: "Secular One", Arial, sans-serif; font-size: 18px; margin-bottom: 8px; }
+  .steps b { display: block; font-size: 18px; }
+  .steps span { color: var(--muted); font-size: 15.5px; }
+
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px 22px; padding: 0; margin: 0; list-style: none; }
+  .why li { display: grid; grid-template-columns: 14px 1fr; gap: 10px; }
+  .why li::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--yellow); margin-top: 9px; }
+
+  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .plan { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  .plan.hot { border-color: var(--yellow); }
+  .plan h3 { margin: 0 0 4px; font-size: 20px; }
+  .plan p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .note { margin-top: 14px; }
+
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px 16px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 700; padding: 12px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--yellow); font-size: 22px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 0 0 14px; color: var(--muted); }
+
+  .final { text-align: center; display: grid; gap: 14px; justify-items: center; }
+  footer { border-top: 1px solid var(--line); padding: 22px 0 30px; color: var(--muted); font-size: 14.5px; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  footer a { color: var(--muted); }
+
+  .bar { position: fixed; inset-inline: 0; bottom: 0; padding: 10px max(14px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+    background: rgba(14,14,18,.92); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
+  .bar .btn { width: 100%; }
+  @media (min-width: 760px) { .bar { display: none; } body { padding-bottom: 0; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <img class="logo" src="logo.jpg" alt="הלוגו של Alfa AI Studio" width="108" height="108">
-    <h1>Alfa AI Studio</h1>
-    <p class="tag">פרסומות וידאו לעסקים, בלי צלם ובלי שחקנים</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+
+<div class="wrap">
+  <nav class="top" aria-label="ראשי">
+    <a class="brand" href="#"><img src="logo.jpg" alt="" width="40" height="40">Alfa AI Studio</a>
+    <a class="small" href="https://wa.me/972587618561?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%A1%D7%A8%D7%98%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99">וואטסאפ</a>
+  </nav>
+
+  <header class="hero">
+    <h1>פרסומת וידאו לעסק שלכם.<br><span>בלי צלם ובלי שחקנים.</span></h1>
+    <p>סרטונים קצרים עם קריינות בעברית וכתוביות, מוכנים לאינסטגרם, פייסבוק, טיקטוק וסטטוס. רואים טיוטה לפני שמשלמים.</p>
+    <div class="ctas">
+      <a class="btn wa" href="https://wa.me/972587618561?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%A1%D7%A8%D7%98%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99"><svg aria-hidden="true"><use href="#wa"/></svg>שלחו הודעה בוואטסאפ</a>
+      <a class="btn ghost" href="#works">לראות דוגמאות</a>
+    </div>
+    <ul class="badges" aria-label="יתרונות">
+      <li>קריינות בעברית</li><li>טיוטה תוך 72 שעות</li><li>בלי התחייבות</li>
+    </ul>
   </header>
+</div>
 
-  <a class="btn wa" href="https://wa.me/972587618561?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A1%D7%A8%D7%98%D7%95%D7%9F%20%D7%A9%D7%9C%D7%9A%20%D7%91%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%92%D7%A8%D7%9D%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%A1%D7%A8%D7%98%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
-    לשיחה והצעת מחיר בוואטסאפ
-  </a>
+<main>
+  <section id="works" class="wrap" aria-labelledby="works-h">
+    <h2 id="works-h">דוגמאות</h2>
+    <div class="works">
+      <article class="work">
+        <video controls playsinline preload="none" poster="media/shlomi.jpg" aria-label="פרסומת לדוגמה: שלומי הג'וק">
+          <source src="media/shlomi.mp4" type="video/mp4">
+        </video>
+        <h3>שלומי הג'וק <span class="tag">אנימציה</span></h3>
+        <p>פרסומת לחברת הדברה. דמות מצחיקה שמספרת את הסיפור, והעסק הוא הפאנץ'.</p>
+      </article>
+      <article class="work">
+        <video controls playsinline preload="none" poster="media/kids.jpg" aria-label="פרסומת לדוגמה: חנות בגדי ילדים">
+          <source src="media/kids.mp4" type="video/mp4">
+        </video>
+        <h3>חנות בגדי ילדים <span class="tag">ריאליסטי</span></h3>
+        <p>נראה כמו צילום אמיתי בבית ישראלי, עם קריינות של אמא שמדברת ללקוחות.</p>
+      </article>
+    </div>
+    <p class="more"><a href="https://www.instagram.com/alfa.ai.studio/">עוד עבודות באינסטגרם ←</a></p>
+  </section>
 
-  <ul>
-    <li><span>סרטונים קצרים לאינסטגרם, פייסבוק, טיקטוק וסטטוס</span></li>
-    <li><span>עברית טבעית ומראה של עסק ישראלי אמיתי</span></li>
-    <li><span>בלי לצלם ובלי להופיע מול מצלמה</span></li>
-    <li><span>רואים את הסרטון לפני שמשלמים</span></li>
-  </ul>
+  <section class="wrap" aria-labelledby="how-h">
+    <h2 id="how-h">איך זה עובד</h2>
+    <ol class="steps">
+      <li><b>שולחים הודעה</b><span>מספרים בכמה מילים על העסק ומה חשוב לכם שהסרטון יביא.</span></li>
+      <li><b>מקבלים טיוטה</b><span>תוך 72 שעות: סרטון עם קריינות בעברית, כתוביות ומוזיקה, עם סימן מים.</span></li>
+      <li><b>מאשרים ומפרסמים</b><span>אחרי האישור והתשלום מקבלים קובץ נקי, מוכן להעלאה.</span></li>
+    </ol>
+  </section>
 
-  <div class="links">
-    <a class="btn ghost" href="https://www.instagram.com/alfa.ai.studio/">דוגמאות עבודה באינסטגרם</a>
-  </div>
+  <section class="wrap" aria-labelledby="why-h">
+    <h2 id="why-h">למה זה עובד לעסקים קטנים</h2>
+    <ul class="why">
+      <li>לא צריך לצלם ולא צריך להופיע מול מצלמה</li>
+      <li>עברית טבעית ומראה של עסק ישראלי אמיתי</li>
+      <li>סרטון קצר שתופס את העין בגלילה הראשונה</li>
+      <li>טקסט מוכן לפוסט מצורף לכל סרטון</li>
+      <li>סבב תיקונים לכל סרטון</li>
+      <li>רואים טיוטה לפני שמשלמים</li>
+    </ul>
+  </section>
 
-  <footer>Alfa AI Studio · וואטסאפ 058-761-8561</footer>
+  <section class="wrap" aria-labelledby="plans-h">
+    <h2 id="plans-h">מסלולים</h2>
+    <div class="plans">
+      <div class="plan"><h3>סרטון אחד</h3><p>לנסות פעם אחת ולראות איך זה עובד אצלכם.</p></div>
+      <div class="plan"><h3>בסיסי</h3><p>4 סרטונים בחודש, סרטון בשבוע.</p></div>
+      <div class="plan hot"><h3>מומלץ</h3><p>8 סרטונים בחודש ועוד 4 קרוסלות לאינסטגרם ולפייסבוק.</p></div>
+      <div class="plan"><h3>מורחב</h3><p>12 סרטונים בחודש ועוד 8 קרוסלות.</p></div>
+    </div>
+    <p class="note muted">בכל מסלול: רעיון, תסריט, קריינות, כתוביות ומוזיקה. המסלולים החודשיים בלי התחייבות. לפרטים ומחירים, שלחו הודעה.</p>
+  </section>
+
+  <section class="wrap" aria-labelledby="faq-h">
+    <h2 id="faq-h">שאלות נפוצות</h2>
+    <details><summary>צריך לצלם משהו?</summary><p>לא. אם יש לכם תמונות או סרטונים מהעסק, אפשר לשלב אותם, אבל זה לא חובה.</p></details>
+    <details><summary>כמה זמן זה לוקח?</summary><p>טיוטה ראשונה תוך 72 שעות מרגע שקיבלנו את הפרטים על העסק.</p></details>
+    <details><summary>ומה אם לא אהבתי?</summary><p>רואים טיוטה עם סימן מים לפני שמשלמים. לכל סרטון יש סבב תיקונים, כדי שייצא בדיוק כמו שאתם רוצים.</p></details>
+    <details><summary>איפה אפשר לפרסם את הסרטון?</summary><p>באינסטגרם, בפייסבוק, בטיקטוק, בסטטוס של הוואטסאפ ובאתר שלכם.</p></details>
+    <details><summary>הסרטונים נעשים בבינה מלאכותית?</summary><p>כן. אנחנו עובדים עם כלים מתקדמים, וכל סרטון עובר עריכה ובדיקה ידנית לפני שהוא מגיע אליכם.</p></details>
+  </section>
+
+  <section class="wrap final" aria-labelledby="final-h">
+    <h2 id="final-h">רוצים לראות איך זה ייראה אצלכם?</h2>
+    <p class="muted">שלחו הודעה, ונחזור אליכם עם רעיון לסרטון לעסק שלכם.</p>
+    <a class="btn wa" href="https://wa.me/972587618561?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%A1%D7%A8%D7%98%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99"><svg aria-hidden="true"><use href="#wa"/></svg>שלחו הודעה בוואטסאפ</a>
+  </section>
 </main>
+
+<div class="wrap">
+  <footer>
+    <span>Alfa AI Studio</span>
+    <a href="tel:+972587618561" dir="ltr">058-761-8561</a>
+    <a href="https://www.instagram.com/alfa.ai.studio/">אינסטגרם</a>
+  </footer>
+</div>
+
+<div class="bar">
+  <a class="btn wa" href="https://wa.me/972587618561?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%A1%D7%A8%D7%98%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99"><svg aria-hidden="true"><use href="#wa"/></svg>שלחו הודעה בוואטסאפ</a>
+</div>
 </body>
 </html>
