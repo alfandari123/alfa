@@ -8,4 +8,8 @@ All WhatsApp buttons prefill "היי, הגעתי מהאתר ואשמח לשמו�
 Public promises on the page: draft within 72h, watermarked draft before payment, one revision round per video,
 monthly packages without commitment. Content rule: show results, never tool names/prompts.
 Deploy: git add -A && git commit && git push (Pages rebuilds in ~1 min). Only with Reuven's OK (public).
+pros/index.html (8.11.2026) is a trades page for sealing, leak detection, plumbing and boilers.
+- Samples: elharar + media/winter.mp4. winter.mp4 is the studio version of the sealing "real" demo (build_real.py studio).
+- WhatsApp prefill: "היי, הגעתי מדף בעלי המקצוע ואשמח לשמוע על סרטון לעסק שלי". No prices on the page.
+- Built locally. NOT pushed until Reuven OKs.
 Phone QA: headless Chrome min width is ~500px → render inside a 390px iframe (scratch frame.html) to check mobile.
